@@ -1,0 +1,106 @@
+/* Login.css - Updated Light Grey Theme */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f5f5f5; /* light grey background */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.login-container {
+  background: #ffffff; /* white container */
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+.login-container h2 {
+  margin-bottom: 30px;
+  color: #333333; /* dark grey heading */
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 28px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 14px 10px;
+  margin: 12px 0;
+  border: 1px solid #ccc; /* soft grey border */
+  border-radius: 10px;
+  font-size: 16px;
+  background: #ffffff; /* light grey input background */
+  color: #111; /* added: dark text color */
+  transition: 0.3s;
+}
+
+.login-container input:focus {
+  border-color: #1976d2; /* soft blue on focus */
+  outline: none;
+  box-shadow: 0 0 8px rgba(25, 118, 210, 0.3);
+  background: #ffffff;
+  color: #111; /* ensure text stays visible on focus */
+}
+
+
+.login-container button {
+  width: 50%;
+  padding: 14px;
+  margin-top: 20px;
+  background-color: #1976d2; /* soft blue button */
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-container button:hover {
+  background-color: #115293; /* darker blue on hover */
+  transform: scale(1.02);
+}
+
+.login-container p {
+  margin-top: 20px;
+  color: #555555; /* grey text */
+  font-weight: 500;
+}
+
+.login-container .register-link a {
+  color: #1976d2; /* blue link */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.login-container .register-link a:hover {
+  color: #115293; /* darker blue on hover */
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 35px 25px;
+  }
+
+  .login-container h2 {
+    font-size: 24px;
+  }
+
+  .login-container button {
+    width: 60%;
+  }
+}

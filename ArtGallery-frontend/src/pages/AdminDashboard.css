@@ -1,0 +1,254 @@
+/* 🌈 General Layout */
+.admin-dashboard {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f8f8f8, #eaeaea);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* 🌟 Navbar */
+.navbar-admin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  z-index: 9999;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff4d4d;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.logout-btn {
+  background: #ff3333;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 20px;
+  transition: 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background: #d90429;
+}
+
+/* 🖥️ Dashboard Layout */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  padding: 140px 100px 60px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 👥 Users Section */
+.users-section {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  height: fit-content;
+}
+.users-section h2 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ff4d4d;
+  padding-bottom: 8px;
+}
+.users-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.users-section th,
+.users-section td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+.users-section th {
+  background: #f3f3f3;
+  font-weight: 600;
+  color: #333;
+}
+.delete-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+.delete-btn:hover {
+  background: #e63946;
+}
+
+/* 🎨 Artworks Section */
+.artworks-section {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+.artworks-section h2 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ff4d4d;
+  padding-bottom: 8px;
+}
+
+/* 🔳 Art Grid */
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* 🖼️ Each Card */
+.art-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.art-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Image */
+.art-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+/* Content Area */
+.art-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+/* Info Block */
+.art-card-content > div:first-child {
+  flex: 1;
+}
+.art-card-content h3 {
+  font-size: 1rem;
+  color: #111;
+  margin: 0 0 6px;
+}
+.art-card-content p {
+  font-size: 0.85rem;
+  color: #444;
+  margin: 2px 0;
+}
+.art-card-content strong {
+  color: #111;
+}
+
+/* 🏷️ Status */
+.status {
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 4px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  border: 1px solid transparent;
+}
+.status.PENDING,
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+  border-color: #ffeeba;
+}
+.status.APPROVED,
+.status.approved {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+.status.REJECTED,
+.status.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+/* ✅ Buttons Section (Fix visibility) */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.approve-btn,
+.reject-btn {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.approve-btn {
+  background: #22c55e;
+}
+.approve-btn:hover {
+  background: #16a34a;
+}
+
+.reject-btn {
+  background: #ef4444;
+}
+.reject-btn:hover {
+  background: #dc2626;
+}
+
+/* 🧭 Responsive */
+@media (max-width: 1100px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    padding: 110px 30px;
+  }
+  .users-section,
+  .artworks-section {
+    margin-bottom: 30px;
+  }
+}

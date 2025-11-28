@@ -1,0 +1,44 @@
+services:
+  mysqldb:
+    image: mysql:8
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: artgallerydb
+    ports:
+      - "3303:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - springboot-mysql-net
+
+  backend:
+    image: nandinireddy325/docker-artgallery-backend:latest
+    container_name: springboot
+    ports:
+      - "4002:2200"
+    depends_on:
+      - mysqldb
+    restart: on-failure
+    networks:
+      - springboot-mysql-net
+    volumes:
+      - uploads:/app/uploads
+
+  frontend:
+    image: nandinireddy325/docker-artgallery-frontend:latest
+    container_name: react
+    ports:
+      - "4003:80"
+    depends_on:
+      - backend
+    restart: on-failure
+    networks:
+      - springboot-mysql-net
+
+volumes:
+  mysql_data:
+  uploads:
+
+networks:
+  springboot-mysql-net:

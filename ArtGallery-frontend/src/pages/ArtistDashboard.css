@@ -1,0 +1,307 @@
+/* 🌈 General Layout */
+.artist-dashboard {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f8f8f8, #eaeaea);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* 🌟 NAVBAR */
+.navbar1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  z-index: 9999;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff4d4d;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  padding: 8px 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+.logout-btn {
+  background: #ff3333;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 20px;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #d90429;
+}
+
+/* 🖼️ Main Dashboard */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  padding: 160px 100px 60px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 🧑‍🎨 Add Artwork Section */
+.add-art {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  height: fit-content;
+  transition: transform 0.3s ease;
+  margin-top: 140px;
+}
+
+.add-art:hover {
+  transform: translateY(-4px);
+}
+
+.add-art h3 {
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ff4d4d;
+  padding-bottom: 8px;
+}
+
+.add-art form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.add-art input,
+.add-art textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.add-art input:focus,
+.add-art textarea:focus {
+  border-color: #ff4d4d;
+}
+
+.add-art button {
+  background: #ff4d4d;
+  color: white;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-art button:hover {
+  background: #e63946;
+}
+
+/* 🎨 Art List Section */
+.art-list {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  overflow-y: auto;
+  margin-top: 140px;
+}
+
+.art-list h3 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ff4d4d;
+  padding-bottom: 8px;
+}
+
+/* 💡 Artwork Grid */
+.art-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+/* 💎 Artwork Card */
+.art-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  height: 240px;
+}
+
+.art-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.art-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+/* ✨ Title */
+.art-item strong {
+  font-size: 0.9rem;
+  color: #111;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+/* 📝 Description (simple truncation) */
+.art-item p {
+  font-size: 0.78rem;
+  color: #555;
+  text-align: center;
+  margin: 0 0 4px;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* show 2 lines max */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 28px;
+}
+
+/* 🏷️ Small Text */
+.art-item small {
+  color: #666;
+  font-size: 0.7rem;
+}
+
+/* 🎛️ Buttons */
+.art-item button {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 9px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: background 0.3s ease;
+}
+
+.art-item button:hover {
+  background: #e63946;
+}
+
+/* 🚫 Rejected Artwork */
+.art-item.rejected {
+  opacity: 0.7;
+  filter: grayscale(0.7);
+}
+
+/* 🏷️ Artwork Status */
+.status {
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+}
+
+.status.approved {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.status.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* 🖼️ Empty Message */
+.art-list p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 100px;
+}
+
+/* 🎨 Scrollbar */
+.art-list::-webkit-scrollbar {
+  width: 10px;
+}
+.art-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+.art-list::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* 🧭 Responsive */
+@media (max-width: 1100px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    padding: 110px 30px;
+  }
+  .add-art {
+    margin-bottom: 30px;
+  }
+}

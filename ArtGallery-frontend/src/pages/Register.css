@@ -1,0 +1,166 @@
+/* Background */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f4f6f9;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 30px;
+}
+
+/* Wider Card Container */
+.register-container {
+  background: #fff;
+  padding: 60px 80px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 950px; /* ✅ wider card */
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.register-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.register-container h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+/* Form Grid */
+.register-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* ✅ 2 columns since wider */
+  gap: 24px 40px;
+  width: 100%;
+}
+
+/* Inputs & select */
+.register-form input,
+.register-form select {
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  font-size: 17px;
+  background: #fafafa;
+  color: #222;
+  transition: all 0.25s ease;
+}
+
+.register-form input::placeholder {
+  color: #888;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #007bff;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Full-width fields */
+.full-width {
+  grid-column: span 2;
+}
+
+/* Button */
+.register-container button {
+  padding: 18px;
+  background: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.register-container button:hover {
+  background: #0056b3;
+  transform: scale(1.04);
+}
+
+/* Messages */
+.message {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Social login */
+.social-login p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social-icons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-icons button:hover {
+  transform: scale(1.12);
+}
+
+.google { background: #db4437; }
+.twitter { background: #1da1f2; }
+.facebook { background: #4267b2; }
+
+/* Login link */
+.login-link {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .register-container {
+    padding: 40px 28px;
+    max-width: 95%;
+  }
+
+  .register-form {
+    grid-template-columns: 1fr;
+  }
+
+  .register-container h2 {
+    font-size: 26px;
+  }
+}
