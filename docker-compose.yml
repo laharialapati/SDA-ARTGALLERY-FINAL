@@ -13,7 +13,7 @@ services:
       - springboot-mysql-net
 
   backend:
-    image: nandinireddy325/docker-artgallery-backend:latest
+    image: laharialapati/docker-artgallery-backend:latest
     container_name: springboot
     ports:
       - "4002:2200"
@@ -26,7 +26,7 @@ services:
       - uploads:/app/uploads
 
   frontend:
-    image: nandinireddy325/docker-artgallery-frontend:latest
+    image: laharialapati/docker-artgallery-frontend:latest
     container_name: react
     ports:
       - "4003:80"
